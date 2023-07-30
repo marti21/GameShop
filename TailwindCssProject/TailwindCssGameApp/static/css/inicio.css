@@ -1,0 +1,289 @@
+body{
+    background-color: #272727;
+    font-family: barlow,arial,sans-serif;
+}
+
+header{
+
+}
+
+.firstHeader{
+    margin-bottom: 420px;
+}
+
+.secondHeader{
+    margin-bottom: 542px;
+}
+
+.logoImg{
+    position: absolute;
+    background-image: url('https://www.freeiconspng.com/thumbs/gaming-logo/cool-black-gaming-logo--bad-character-png-free-download-4.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 30px;
+    left: 30px;
+    height: 130px;
+    width: 130px;
+    z-index: 3;
+}
+
+.conendorImagenFondo{
+    display: flex;
+    width: 100%;
+    height: 600px;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.imagenDeFondo {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.imagenDeFondo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.2);
+    /*object-position: right top;*/
+    object-position: center 0%;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 80%); /* Polígono que recorta la parte inferior del contenedor */
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.firstMenu{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    font-size: 15px;
+    font-family: barlow,arial,sans-serif;
+    z-index: 2;
+}
+
+.firstMenu a{
+    text-decoration: none !important;
+    color: white;
+}
+
+.firstMenu a:hover{
+    color:aqua;
+}
+.secondMenu{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: white;
+    z-index: 2;
+}
+.items{
+    width: 550px;
+    height: 45px;
+    backdrop-filter: blur(5px);
+    /*background: #ffffff99;*/
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    border-radius: 50px;
+    justify-content: space-around;
+    color: white;
+    font-family: barlow,arial,sans-serif;
+}
+
+.itemNav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.pcIcon{
+    mask-image: url(../webIcons/icon-pc.svg);
+    -webkit-mask-image: url(../webIcons/icon-pc.svg);
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    mask-position: center;
+
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+
+    background-color: #fff;
+}
+
+.playIcon{
+    mask-image: url(../webIcons/icon-play.svg);
+    -webkit-mask-image: url(../webIcons/icon-play.svg);
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    mask-position: center;
+
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+
+    background-color: #fff;
+}
+
+.xboxIcon{
+    mask-image: url(../webIcons/icon-xbx.svg);
+    -webkit-mask-image: url(../webIcons/icon-xbx.svg);
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    mask-position: center;
+
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+
+    background-color: #fff;
+}
+
+.nintendoIcon{
+    mask-image: url(../webIcons/icon-swt.svg);
+    -webkit-mask-image: url(../webIcons/icon-swt.svg);
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    mask-position: center;
+
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+
+    background-color: #fff;
+}
+
+.iconArrow{
+    mask-image: url(../webIcons/icon-arrow.svg);
+    -webkit-mask-image: url(../webIcons/icon-arrow.svg);
+    width: 12px;
+    height: 12px;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    background-color: #fff;
+
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+
+    opacity: .4;
+    transform: rotate(90deg) translateX(3px);
+}
+
+main{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+}
+
+.mainContent{
+    max-width: 1200px;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.contentTendencias{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    align-self: center;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+.contentTendencias h2{
+    color: white;
+    font-size: 27px;
+    font-weight: 500;
+}
+.allGames{
+    display: flex;
+    flex-wrap: wrap;
+}
+.gameContainer{
+    width: calc(33.33333% - 30px);
+    height: calc(33.33333% - 30px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 0;
+    margin: 15px 15px 40px 15px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.gamePicture{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.gameContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: .2s;
+}
+
+.gameContainer img:hover{
+    transform: scale(1.06);
+    cursor: pointer;
+}
+
+.titleGame{
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    display: flex;
+    top:0;
+    left: 0;
+    height: 30px;
+    padding-top: 10px;
+    color: white;
+}
+
+.titleGame span{
+    font-size: 20px;
+}
+
+.firstMenuScrolled {
+    background-color: #101010;
+    position: fixed;
+    z-index: 3;
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    height: 80px;
+}

@@ -1,0 +1,171 @@
+
+body{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.leftContent{
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: #323232;
+}
+
+.rightContent{
+    width: 50%;
+    height: 100vh;
+    background-image: url('https://www.instant-gaming.com/themes/igv2/modules/register/images/wallpaper.jpg');
+    background-size: cover; /* Ajustar el tamaño de la imagen para cubrir todo el botón */
+    background-position: top;
+}
+
+.formContent{
+    display: flex;
+    height: 450px;
+    width: calc(100% - 20px);
+    max-width: 550px;
+    flex-direction: column;
+    padding: 0px 30px 30px;
+    margin: auto;
+    box-sizing: border-box;
+    color: white;
+    justify-content: center;
+}
+
+.loginDiv{
+}
+
+.form-control{
+    margin-top: 20px;
+    color: white;
+    width: calc(100% - 20px);
+    max-width: 450px;
+    height: 58px;
+    box-shadow: inset 0 0 0 2px #3d3d3d;
+    background-color: rgba(16,16,16,.4);
+    border: 0;
+    font-family: barlow,arial,sans-serif;
+    border-radius: 7px;
+    outline: none;
+    padding-left: 10px;
+    transition: .3s;
+}
+
+.form-control:hover,
+.form-control:focus {
+    box-shadow: inset 0 0 0 2px #ff5400;
+}
+
+.LoginButton{
+    margin-top: 20px;
+    width: calc(100% - 20px);
+    outline: none;
+    border-radius: 7px;
+    border: 0;
+    height: 51px;
+    color: white;
+    background: linear-gradient(10deg,#ff8000,transparent) #ff4020;
+    transition: background-color 10s; /* Transición solo para background-color */
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    max-width: 460px;
+}
+
+.LoginButton:hover {
+    background: linear-gradient(190deg,#ff2020,#ff8000);
+}
+
+h2{
+    font-family: barlow,arial,sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.loginOtherContainer{
+    width: calc(100% - 20px);
+    max-width: 460px;
+    display: flex;
+    flex-direction: row;
+    height: 55px;
+    gap: 20px;
+}
+
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.facebookContainer img{
+    width: 95%;
+    height: 90%;
+}
+
+.googleContainer img{
+    width: 90%;
+    height: 50%;
+}
+
+.gitHubContainer img{
+    width: 100%;
+    height: 60%;
+}
+
+.facebookContainer{
+    display: flex;
+    flex: 1;
+    background-color: #1877f2;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.googleContainer{
+    display: flex;
+    flex: 1;
+    background-color: #fff;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.gitHubContainer{
+    display: flex;
+    flex: 1;
+    background-color: #000;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.facebookContainer:hover,
+.googleContainer:hover,
+.gitHubContainer:hover {
+    box-shadow: inset 0 0 0 2px #ff5400;
+}
+
+
+.separador {
+    border-top: 1px solid hsla(0,0%,100%,.2); /* Una línea horizontal de 1px de grosor y color negro */
+    width: calc(100% - 30px);
+    margin-top: 30px;
+}
+
+.logoImg{
+    position: absolute;
+    background-image: url('https://www.freeiconspng.com/thumbs/gaming-logo/cool-black-gaming-logo--bad-character-png-free-download-4.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 30px;
+    left: 30px;
+    height: 130px;
+    width: 130px;
+}

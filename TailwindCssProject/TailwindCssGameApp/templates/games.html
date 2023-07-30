@@ -1,0 +1,131 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+    <head><title>Login</title>
+        <link href='{% static "css/inicio.css" %}' rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap">
+    </head>
+    <body>
+        <header class="firstHeader header">
+            <div class="conendorImagenFondo">
+                <picture class="imagenDeFondo">
+                    <!--<img src="https://s2.best-wallpaper.net/wallpaper/3840x2160/1811/Red-Dead-Redemption-2-art-picture_3840x2160.jpg" alt="Texto alternativo">-->
+                    <img src="https://www.warlegend.net/wp-content/uploads/Guide-du-d%C3%A9butant-Assassins-Creed-Valhalla.jpg" alt="Texto alternativo">
+                    <!--<img src="https://www.xtrafondos.com/descargar.php?id=3380&resolucion=3840x2160" alt="Texto alternativo">-->
+                </picture>
+            </div>
+            <a class="logoImg"></a>
+            <div class="menu">
+                <div class="firstMenu">
+                    <a href="#">{% trans "Tendencias" %}</a>
+                    <a href="#">{% trans "Reservas" %}</a>
+                    <a href="#">{% trans "Proximos lanzamientos" %}</a>
+                    <a href="#">{% trans "Soporte" %}</a>
+                </div>
+                <div class="secondMenu hidden">
+                    <div class="items">
+                        <div class="itemNav"><div class="pcIcon"></div><span>PC</span><div class="iconArrow"></div></div>
+                        <div class="itemNav"><div class="playIcon"></div><span>Playstation</span><div class="iconArrow"></div></div>
+                        <div class="itemNav"><div class="xboxIcon"></div><span>Xbox</span><div class="iconArrow"></div></div>
+                        <div class="itemNav"><div class="nintendoIcon"></div><span>Nintendo</span><div class="iconArrow"></div></div>
+                    </div>  
+                </div>
+            </div>
+        </header>
+        
+
+        <main>
+            <div class="mainContent">
+                <div class="contentTendencias">
+                    <h2>{% trans "Tendencias" %}</h2>
+                </div>
+                
+
+                <div class="allGames">
+                    {% if games %}
+                    {% for game in games %}
+                        <div class="gameContainer">
+                            <picture class="gamePicture">
+                                <img alt="{{ game.name }}" src="/media/{{ game.image }}" loading="lazy" onload="lazyLoadImage(this)">      
+                            </picture>
+                            <div class="titleGame"><span>{{game.name}}</span><span>{{game.price}}$</span></div>
+                        </div>
+                    {% endfor %}
+            
+                    {% else %}
+                        <p>No gammes</p>
+                    {% endif %}
+
+                    <div class="gameContainer">
+                        <picture class="gamePicture">
+                            <img data-src="https://gaming-cdn.com/images/products/13288/380x218/remnant-2-pc-juego-steam-cover.jpg?v=1690639200" alt="Remnant 2" src="https://gaming-cdn.com/images/products/13288/380x218/remnant-2-pc-juego-steam-cover.jpg?v=1690639200" loading="lazy" onload="lazyLoadImage(this)">      
+                        </picture>
+                        <div class="titleGame"><span>Remnant 2</span><span>36.49$</span></div>
+                    </div>
+                    <div class="gameContainer">
+                        <picture class="gamePicture">
+                            <img class="picture" data-src="https://gaming-cdn.com/images/products/9665/380x218/ratchet-clank-rift-apart-pc-juego-steam-europe-cover.jpg?v=1690642800" alt="Ratchet &amp; Clank Rift Apart" src="https://gaming-cdn.com/images/products/9665/380x218/ratchet-clank-rift-apart-pc-juego-steam-europe-cover.jpg?v=1690642800" loading="lazy" onload="lazyLoadImage(this)">
+                        </picture>
+                        <div class="titleGame"><span>Remnant 2</span><span>36.49$</span></div>
+                    </div>
+                    <div class="gameContainer">
+                        <picture class="gamePicture">
+                            <img class="picture" data-src="https://gaming-cdn.com/images/products/9665/380x218/ratchet-clank-rift-apart-pc-juego-steam-europe-cover.jpg?v=1690642800" alt="Ratchet &amp; Clank Rift Apart" src="https://gaming-cdn.com/images/products/9665/380x218/ratchet-clank-rift-apart-pc-juego-steam-europe-cover.jpg?v=1690642800" loading="lazy" onload="lazyLoadImage(this)">
+                        </picture>
+                        <div class="titleGame"><span>Remnant 2</span><span>36.49$</span></div>
+                    </div>
+                    <div class="gameContainer">
+                        <picture class="gamePicture">
+                            <img class="picture" data-src="https://gaming-cdn.com/images/products/9665/380x218/ratchet-clank-rift-apart-pc-juego-steam-europe-cover.jpg?v=1690642800" alt="Ratchet &amp; Clank Rift Apart" src="https://gaming-cdn.com/images/products/9665/380x218/ratchet-clank-rift-apart-pc-juego-steam-europe-cover.jpg?v=1690642800" loading="lazy" onload="lazyLoadImage(this)">
+                        </picture>
+                        <div class="titleGame"><span>Remnant 2</span><span>36.49$</span></div>
+                    </div>
+                    <div class="gameContainer">
+                        <picture class="gamePicture">
+                            <img class="picture" data-src="https://gaming-cdn.com/images/products/9665/380x218/ratchet-clank-rift-apart-pc-juego-steam-europe-cover.jpg?v=1690642800" alt="Ratchet &amp; Clank Rift Apart" src="https://gaming-cdn.com/images/products/9665/380x218/ratchet-clank-rift-apart-pc-juego-steam-europe-cover.jpg?v=1690642800" loading="lazy" onload="lazyLoadImage(this)">
+                        </picture>
+                        <div class="titleGame"><span>Remnant 2</span><span>36.49$</span></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script>
+        const secondMenuDiv = document.querySelector('.hidden');
+        const headerElement = document.querySelector('.header');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                secondMenuDiv.classList.add('firstMenuScrolled');
+                secondMenuDiv.classList.remove('secondMenu');
+                hideElementsWithClass('.firstMenu');
+                headerElement.classList.add('secondHeader');
+                headerElement.classList.remove('firstHeader');
+            } 
+            else {
+                secondMenuDiv.classList.remove('firstMenuScrolled');
+                secondMenuDiv.classList.add('secondMenu');
+                showElementsWithClass('.firstMenu');
+                headerElement.classList.remove('secondHeader');
+                headerElement.classList.add('firstHeader');
+            }
+        });
+
+        
+        function hideElementsWithClass(className) {
+            const elements = document.querySelectorAll(className);
+            elements.forEach((element) => {
+                element.style.display = 'none';
+            });
+        }
+
+        function showElementsWithClass(className) {
+            const elements = document.querySelectorAll(className);
+            elements.forEach((element) => {
+                element.style.display = ''; // Restore default display property
+            });
+        }
+    </script>
+</html>

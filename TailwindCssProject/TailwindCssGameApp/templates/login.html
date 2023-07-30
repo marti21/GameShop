@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head><title>Login</title>
+        <link href='{% static "css/login.css" %}' rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap">
+    </head>
+<body>
+    <div class="leftContent">
+        <div class="logoImg"></div>
+        <div class="formContent">
+            <h2>Inicia sesión</h2>
+            <div class="loginOtherContainer">
+                <div class="facebookContainer">
+                    <a href="#"><img src="https://assets.stickpng.com/images/60fea6a93d624000048712b6.png"></a>
+                </div>
+                <div class="googleContainer">
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/012/871/371/original/google-search-icon-google-product-illustration-free-png.png"></a>
+                </div>
+                <div class="gitHubContainer"> 
+                    <a href="#"><img src="https://developer.sas.com/github-resources/_jcr_content/par/styledcontainer_480618029/par/image.img.png/1558449533927.png"></a>
+                </div>
+            </div>
+            <div class="separador">
+                
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}" 
+                        class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="{{ form.password.name }}" id="{{ form.password.id_for_label }}" 
+                        class="form-control" placeholder="********" required>
+                </div>
+                <input class="LoginButton" type="submit" value="Aceptar"/>
+            </form>
+        </div>
+        
+    </div>
+    <div class="rightContent">
+    </div>
+</body>
+</html>
