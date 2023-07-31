@@ -19,12 +19,18 @@ from django.urls import path
 from TailwindCssGameApp.views import get_all_games, loginUser
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
+from django.views.i18n import set_language
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', loginUser, name='pagina_inicio'),
+]
+
+urlpatterns += i18n_patterns(
+    path('i18n/', set_language, name='set_language'),
 
     path('games/', get_all_games, name='games'),
-]
+    path('', loginUser, name='pagina_inicio'),
+)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

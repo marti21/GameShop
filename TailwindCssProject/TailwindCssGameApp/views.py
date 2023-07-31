@@ -4,10 +4,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib import messages
 from django.contrib.auth import login, logout
+from django.shortcuts import redirect
 
 
 def loginUser(request):
     form = AuthenticationForm(data=request.POST)
+
+    if request.user.is_authenticated:
+        return redirect('games')
     
     if form.is_valid():
         user = form.get_user()
