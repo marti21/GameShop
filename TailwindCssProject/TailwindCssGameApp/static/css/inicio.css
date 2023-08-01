@@ -296,3 +296,36 @@ footer{
     background-color: #101010;
     margin: 0;
 }
+
+#language-selector {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 200px;
+}
+
+/* Cambiar el aspecto del selector al pasar el cursor sobre él */
+#language-selector:hover {
+    border-color: blue;
+}
+
+/* Cambiar el aspecto del selector cuando está enfocado */
+#language-selector:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Cambiar el aspecto de las opciones del selector */
+#language-selector option {
+    background-color: #fff;
+    color: #333;
+    padding: 30px;
+}
+
+/* Cambiar el aspecto de las opciones del selector cuando están seleccionadas */
+#language-selector option:checked {
+    background-color: #4CAF50;
+    color: #fff;
+}
