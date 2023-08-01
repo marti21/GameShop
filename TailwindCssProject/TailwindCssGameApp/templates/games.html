@@ -48,7 +48,7 @@
                     {% for game in games %}
                         <div class="gameContainer">
                             <picture class="gamePicture">
-                                <img alt="{{ game.name }}" src="/media/{{ game.image }}" loading="lazy" onload="lazyLoadImage(this)">      
+                                <img alt="{{ game.name }}" src="{{ game.image.url }}" loading="lazy" onload="lazyLoadImage(this)">      
                             </picture>
                             <div class="titleGame"><span>{{game.name}}</span><span>{{game.price}}$</span></div>
                         </div>

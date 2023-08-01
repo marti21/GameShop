@@ -25,11 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9+ocz&c6lo1m*k42)%azj027w4k%#y7p%je__ri-drh%7%#oha'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['192.168.1.100', 'localhost', '127.0.0.1']
-
 
 
 # Application definition
@@ -41,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'TailwindCssGameApp'
 ]
 
@@ -134,17 +134,32 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'TailwindCssGameApp/media')
-
 LOGIN_URL = '/'
 
-STATICFILES_DIRS= [(os.path.join(BASE_DIR, 'TailwindCssGameApp/static'))]
+if DEBUG:
+    STATICFILES_DIRS= [(os.path.join(BASE_DIR, 'TailwindCssGameApp/static'))]
+    STATIC_URL = 'static/'
+    MEDIA = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'TailwindCssGameApp/media')    
+
+else:
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+    AWS_ACCESS_KEY_ID = 'AKIA36SUVQUCP3VQJX7K'
+    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_STORAGE_BUCKET_NAME = 'bucketdjangopruebagameshop'
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+    AWS_S3_REGION_NAME = 'eu-west-1'
+
+    AWS_LOCATION = 'static'
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'TailwindCssGameApp/static'),
+    ]
+    STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

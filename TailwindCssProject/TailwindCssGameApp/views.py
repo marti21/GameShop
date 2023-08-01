@@ -6,6 +6,12 @@ from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.shortcuts import redirect
 
+def show_error_404(request, exception):
+    if request.user.is_authenticated:
+        return render(request, '404.html', status=404)
+    else:
+        return redirect('pagina_inicio')
+
 
 def loginUser(request):
     form = AuthenticationForm(data=request.POST)
