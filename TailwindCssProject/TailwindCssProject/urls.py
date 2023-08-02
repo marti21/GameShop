@@ -33,6 +33,4 @@ urlpatterns += i18n_patterns(
     path('', loginUser, name='pagina_inicio'),
 )
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 handler404 = show_error_404
