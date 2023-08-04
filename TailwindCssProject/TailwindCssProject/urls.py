@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from TailwindCssGameApp.views import get_all_games, loginUser, show_error_404
+from TailwindCssGameApp.views import get_trend_games, loginUser, show_error_404, get_game, game_list
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
@@ -29,8 +29,10 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('i18n/', set_language, name='set_language'),
 
-    path('games/', get_all_games, name='games'),
-    path('', loginUser, name='pagina_inicio'),
+    path('login/', loginUser, name='login'),
+    path('', get_trend_games, name='trends'),
+    path('game/<str:gameName>', get_game, name='game'),
+    path('games/', game_list, name='games')
 )
 
 handler404 = show_error_404

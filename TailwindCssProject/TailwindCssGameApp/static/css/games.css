@@ -1,0 +1,90 @@
+body{
+    background-color: #272727;
+    font-family: barlow,arial,sans-serif;
+    margin: 0;
+}
+main{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+}
+.mainContent{
+    max-width: 1200px;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+.contentTendencias{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    align-self: center;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+.contentTendencias h2{
+    color: white;
+    font-size: 27px;
+    font-weight: 500;
+}
+.allGames{
+    display: flex;
+    flex-wrap: wrap;
+}
+.gameContainer{
+    width: calc(33.33333% - 30px);
+    height: calc(33.33333% - 30px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 0;
+    margin: 15px 15px 40px 15px;
+    position: relative;
+    border-radius: 10px;
+}
+.gamePicture{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+.gameContainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: .2s;
+}
+.gameContainer img:hover{
+    transform: scale(1.06);
+    cursor: pointer;
+}
+.titleGame{
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    display: flex;
+    top:0;
+    left: 0;
+    height: 30px;
+    padding-top: 10px;
+    color: white;
+}
+.titleGame span{
+    font-size: 20px;
+}
+.pagination{
+    background-color: red;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.step-links{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    line-height: 30px;
+}

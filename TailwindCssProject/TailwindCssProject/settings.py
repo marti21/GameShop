@@ -24,9 +24,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-9+ocz&c6lo1m*k42)%azj027w4k%#y7p%je__ri-drh%7%#oha'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['192.168.1.100', 'localhost', '127.0.0.1']
 
@@ -141,6 +138,9 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 if DEBUG:
     STATICFILES_DIRS= [(os.path.join(BASE_DIR, 'TailwindCssGameApp/static'))]
