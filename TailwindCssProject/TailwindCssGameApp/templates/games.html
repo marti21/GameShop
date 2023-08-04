@@ -20,12 +20,31 @@
                         <div class="itemNav"><div class="playIcon"></div><span>Playstation</span><div class="iconArrow"></div></div>
                         <div class="itemNav"><div class="xboxIcon"></div><span>Xbox</span><div class="iconArrow"></div></div>
                         <div class="itemNav"><div class="nintendoIcon"></div><span>Nintendo</span><div class="iconArrow"></div></div>
+                        <!-- Incluye jQuery -->
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+                        <!-- Incluye Select2 CSS -->
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+
+                        <!-- Incluye Select2 JS -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
                     </div>  
                 </div>
             </div>
         </header>
         <main>
             <div class="mainContent">
+                <div class="platformsSelectContainter">
+                    <label id="labelPlataformas" for="id_label_multiple">
+                        Plataformas
+                    </label>  
+                    <select class="selectPlataforms" id="id_label_multiple">
+                        <option>Xbox</option>
+                        <option>Playstation</option>
+                        <option>Nintendo</option>
+                    </select>
+                </div>
+
                 <div class="contentTendencias">
                     <h2>{% trans "Tendencias" %}</h2>
                 </div>
@@ -100,4 +119,12 @@
             </div>
         </main>
     </body>
+    <script>
+        $(document).ready(function() {
+            $('.selectPlataforms').select2({
+                placeholder: "All Platforms",
+                allowClear: true
+            });        
+        });
+    </script>
 </html>
