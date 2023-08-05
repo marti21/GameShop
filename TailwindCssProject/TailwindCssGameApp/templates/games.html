@@ -8,27 +8,25 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap">
         <link href='{% static "css/games.css" %}' rel="stylesheet" type="text/css">
         <link href='{% static "css/header.css" %}' rel="stylesheet" type="text/css">
+        <link href='{% static "css/dialog.css" %}' rel="stylesheet" type="text/css">
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Incluye Select2 CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+        <!-- Incluye Select2 JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     </head>
     <body>
-
         <header class="gamesHeader header">
             <div class="menu">
                 <div class="firstMenuScrolled hidden">
                     <a class="logoImg"></a>
                     <div class="items">
-                        <div class="itemNav"><div class="pcIcon"></div><span>PC</span><div class="iconArrow"></div></div>
-                        <div class="itemNav"><div class="playIcon"></div><span>Playstation</span><div class="iconArrow"></div></div>
-                        <div class="itemNav"><div class="xboxIcon"></div><span>Xbox</span><div class="iconArrow"></div></div>
-                        <div class="itemNav"><div class="nintendoIcon"></div><span>Nintendo</span><div class="iconArrow"></div></div>
-                        <!-- Incluye jQuery -->
-                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-                        <!-- Incluye Select2 CSS -->
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
-
-                        <!-- Incluye Select2 JS -->
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-                    </div>  
+                        <div id="itemNav"><div class="pcIcon"></div><span>PC</span><div class="iconArrow"></div></div>
+                        <div id="itemNav1"><div class="playIcon"></div><span>Playstation</span><div class="iconArrow"></div></div>
+                        <div id="itemNav2"><div class="xboxIcon"></div><span>Xbox</span><div class="iconArrow"></div></div>
+                        <div id="itemNav3"><div class="nintendoIcon"></div><span>Nintendo</span><div class="iconArrow"></div></div>
+                    </div>
                 </div>
             </div>
         </header>

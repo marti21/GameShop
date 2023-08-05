@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap">
         <link href='{% static "css/games.css" %}' rel="stylesheet" type="text/css">
         <link href='{% static "css/header.css" %}' rel="stylesheet" type="text/css">
+        <link href='{% static "css/dialog.css" %}' rel="stylesheet" type="text/css">
     </head>
     <body>
         <header class="firstHeader header">
@@ -28,13 +29,14 @@
                 </div>
                 <div class="secondMenu hidden">
                     <div class="items">
-                        <div class="itemNav"><div class="pcIcon"></div><span>PC</span><div class="iconArrow"></div></div>
-                        <div class="itemNav"><div class="playIcon"></div><span>Playstation</span><div class="iconArrow"></div></div>
-                        <div class="itemNav"><div class="xboxIcon"></div><span>Xbox</span><div class="iconArrow"></div></div>
-                        <div class="itemNav"><div class="nintendoIcon"></div><span>Nintendo</span><div class="iconArrow"></div></div>
-                    </div>  
+                        <div id="itemNav"><div class="pcIcon"></div><span>PC</span><div class="iconArrow"></div></div>
+                        <div id="itemNav1"><div class="playIcon"></div><span>Playstation</span><div class="iconArrow"></div></div>
+                        <div id="itemNav2"><div class="xboxIcon"></div><span>Xbox</span><div class="iconArrow"></div></div>
+                        <div id="itemNav3"><div class="nintendoIcon"></div><span>Nintendo</span><div class="iconArrow"></div></div>
+                    </div>
                 </div>
             </div>
+            <dialog id="dialog"><button id="closeDialogButton">CLOSE</button></dialog>
         </header>
         
         <main>
@@ -92,6 +94,23 @@
                     </div>
                 </div>
             </div>
+            <div id="accordeonImg">
+                <div class="accordeonContent">
+                    <img src="https://s2.best-wallpaper.net/wallpaper/3840x2160/1811/Red-Dead-Redemption-2-art-picture_3840x2160.jpg" alt="Texto alternativo">
+                </div>
+                <div class="accordeonContent">
+                    <img src="https://www.warlegend.net/wp-content/uploads/Guide-du-d%C3%A9butant-Assassins-Creed-Valhalla.jpg" alt="Texto alternativo">
+                </div>
+                <div class="accordeonContent">
+                    <img src="https://www.xtrafondos.com/descargar.php?id=2068&resolucion=1920x1200" alt="Texto alternativo">
+                </div>
+                <div class="accordeonContent">
+                    <img src="https://cdn1.epicgames.com/offer/e97659b501af4e3981d5430dad170911/EGS_HogwartsLegacy_AvalancheSoftware_S1_2560x1440-2baf3188eb3c1aa248bcc1af6a927b7e" alt="Texto alternativo">                
+                </div>
+                <div class="accordeonContent">
+                    <img src="https://blog.es.playstation.com/tachyon/sites/14/2022/06/adf0c6e3da060a9f9581c12eff047a48668fe616.jpg" alt="Texto alternativo">                
+                </div>
+            </div>
         </main>
         <footer>
             <form action="{% url 'set_language' %}" method="post" id="language-form">
@@ -146,5 +165,52 @@
             const form = document.getElementById('language-form');
             form.submit();
         }
+    </script>
+    <script>
+        const closeDialog = document.getElementById('closeDialogButton');
+        const dialog = document.getElementById('dialog');
+        const xboxDialog = document.getElementById('itemNav');
+        const xboxDialog1 = document.getElementById('itemNav1');
+        const xboxDialog2 = document.getElementById('itemNav2');
+        const xboxDialog3 = document.getElementById('itemNav3');
+        
+        xboxDialog.addEventListener('click', function() {
+            openDialog();
+            enableDialogElements();
+            document.addEventListener('mousemove', mouseMoveHandler);
+        });
+        xboxDialog1.addEventListener('click', openDialog);
+        xboxDialog2.addEventListener('click', openDialog);
+        xboxDialog3.addEventListener('click', openDialog);
+
+        closeDialog.addEventListener('click', function(){
+            dialog.close();
+        })
+        function openDialog(){
+            dialog.showModal();
+        }
+        function enableDialogElements(){
+            
+        }
+        function mouseMoveHandler(event) {
+            const dialogRect = dialog.getBoundingClientRect();
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            const expandedLeft = dialogRect.left - 100;
+            const expandedRight = dialogRect.right + 100;
+            const expandedTop = dialogRect.top - 100;
+            const expandedBottom = dialogRect.bottom + 100;
+
+            if (
+                mouseX < expandedLeft ||
+                mouseX > expandedRight ||
+                mouseY < expandedTop ||
+                mouseY > expandedBottom
+            ) {
+                dialog.close();
+            }
+        }
+        
     </script>
 </html>
