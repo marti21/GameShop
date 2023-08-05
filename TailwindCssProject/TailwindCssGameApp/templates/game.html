@@ -3,5 +3,30 @@
 
 <!DOCTYPE html>
 <html>
-    <h1> {{ game.name }}</h1>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    </head>
+
+    <body>
+        <h1> {{ game.name }}</h1>
+
+        <div id="map" style="height: 500px; width: 70%;"></div>
+    </body>
+    <script>
+        // Coordenadas del lugar que quieres marcar
+        var lugar = [41.750532, 1.878142];
+
+        // Crea el mapa centrado en el lugar con un zoom determinado
+        var map = L.map('map').setView(lugar, 15);
+
+        // Agrega la capa de mapa base de Leaflet (puedes cambiar el estilo del mapa)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        // Agrega el marcador en el lugar
+        L.marker(lugar).addTo(map);
+    </script>
 </html>

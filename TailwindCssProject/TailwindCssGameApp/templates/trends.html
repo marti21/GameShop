@@ -9,6 +9,7 @@
         <link href='{% static "css/games.css" %}' rel="stylesheet" type="text/css">
         <link href='{% static "css/header.css" %}' rel="stylesheet" type="text/css">
         <link href='{% static "css/dialog.css" %}' rel="stylesheet" type="text/css">
+        <link href='{% static "css/footer.css" %}' rel="stylesheet" type="text/css">
     </head>
     <body>
         <header class="firstHeader header">
@@ -113,16 +114,28 @@
             </div>
         </main>
         <footer>
-            <form action="{% url 'set_language' %}" method="post" id="language-form">
-                {% csrf_token %}
-                <select name="language" id="language-selector" onchange=submitForm()>
-                  {% get_available_languages as languages %}
-                  {% get_current_language as current_language %}
-                  {% for lang_code, lang_name in languages %}
-                    <option value="{{ lang_code }}" {% if lang_code == current_language %}selected{% endif %}>{{ lang_name }}</option>
-                  {% endfor %}
-                </select>
-              </form>
+            <div class="contentFooter">
+                
+
+                <div id="rightsFooter">
+                    <div class="rightReservedFooter">
+                        <span>Copyright © 2023 Instant Gaming - All rights reserved</span>
+                    </div>
+                    <div class="rightReservedFooter">
+                        <form action="{% url 'set_language' %}" method="post" id="language-form">
+                            {% csrf_token %}
+                            <select name="language" id="language-selector" onchange=submitForm()>
+                                {% get_available_languages as languages %}
+                                {% get_current_language as current_language %}
+                                {% for lang_code, lang_name in languages %}
+                                <option value="{{ lang_code }}" {% if lang_code == current_language %}selected{% endif %}>{{ lang_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         </footer>
     </body>
     <script>
