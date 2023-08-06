@@ -19,3 +19,53 @@
     height: 100%;
     color: white;
 }
+.topFooter{
+    display: flex;
+    width: 100%;
+    height: calc(100% - 85px);
+    flex-direction: row;
+    gap: 10px;
+}
+.iconFooterContent{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+.footerIconImg, .footerStarIcon {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerIconImg img, .footerStarIcon img{
+    width: 80%;
+    height: 40%;
+}
+.buttonsFooter{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.contentFooterButtons{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.contentFooterButtons button{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    font-family: barlow,arial,sans-serif;
+}
+.contentFooterButtons button:hover{
+    color: #ff5400;
+}

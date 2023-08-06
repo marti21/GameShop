@@ -53,6 +53,7 @@
                             <a href="/game/{{ game.name }}">
                                 <picture class="gamePicture">
                                     <img alt="{{ game.name }}" src="{{ game.image.url }}" loading="lazy" onload="lazyLoadImage(this)">
+                                    <video class="trailer" src="https://bucketdjangopruebagameshop.s3.amazonaws.com/static/videos/AssassinTrailer.mp4" loop muted></video>
                                 </picture>
                             </a>
                             <div class="titleGame"><span>{{game.name}}</span><span>{{game.price}}$</span></div>
@@ -64,14 +65,18 @@
                     {% endif %}
 
                     <div class="gameContainer">
-                        <picture class="gamePicture">
-                            <img data-src="https://gaming-cdn.com/images/products/13288/380x218/remnant-2-pc-juego-steam-cover.jpg?v=1690639200" alt="Remnant 2" src="https://gaming-cdn.com/images/products/13288/380x218/remnant-2-pc-juego-steam-cover.jpg?v=1690639200" loading="lazy" onload="lazyLoadImage(this)">      
-                        </picture>
+                        <a href="/game/{{ game.name }}">
+                            <picture class="gamePicture">
+                                <img data-src="https://gaming-cdn.com/images/products/13288/380x218/remnant-2-pc-juego-steam-cover.jpg?v=1690639200" alt="Remnant 2" src="https://gaming-cdn.com/images/products/13288/380x218/remnant-2-pc-juego-steam-cover.jpg?v=1690639200" loading="lazy" onload="lazyLoadImage(this)">      
+                                <video class="trailer" src="/static/videos/AssassinTrailer.mp4" loop muted></video>
+                            </picture>
+                        </a>
                         <div class="titleGame"><span>Remnant 2</span><span>36.49$</span></div>
                     </div>
                     <div class="gameContainer">
                         <picture class="gamePicture">
                             <img class="picture" data-src="https://gaming-cdn.com/images/products/9665/380x218/ratchet-clank-rift-apart-pc-juego-steam-europe-cover.jpg?v=1690642800" alt="Ratchet &amp; Clank Rift Apart" src="https://gaming-cdn.com/images/products/9665/380x218/ratchet-clank-rift-apart-pc-juego-steam-europe-cover.jpg?v=1690642800" loading="lazy" onload="lazyLoadImage(this)">
+                            <video class="trailer" src="/static/videos/AssassinTrailer.mp4" loop muted></video>
                         </picture>
                         <div class="titleGame"><span>Remnant 2</span><span>36.49$</span></div>
                     </div>
@@ -115,7 +120,27 @@
         </main>
         <footer>
             <div class="contentFooter">
-                
+                <div class="topFooter">
+                    <div class="iconFooterContent">
+                        <div class="footerIconImg">
+                            <img src="https://www.instant-gaming.com/themes/igv2/images/logos/horizontal-orange.svg" alt="Texto alternativo">                
+                        </div>
+                        <div class="footerStarIcon">
+                            <img src="https://www.instant-gaming.com/themes/igv2/images/trustpilot-logo.svg" alt="Texto alternativo">                
+                        </div>                
+                    </div>
+                    <div class="buttonsFooter">
+                        <div class="contentFooterButtons">
+                            <button>Términos y condiciones</button>
+                            <button>Política de privacidad</button>
+                            <button>Contacto</button>
+                            <button>FAQ</button>
+                        </div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
 
                 <div id="rightsFooter">
                     <div class="rightReservedFooter">
@@ -225,5 +250,24 @@
             }
         }
         
+    </script>
+    <script>
+        const juegos = document.querySelectorAll('.gamePicture');
+
+        juegos.forEach((juego) => {
+            const img = juego.querySelector('img');
+            const video = juego.querySelector('video');
+
+            juego.addEventListener('mouseenter', () => {
+                setTimeout(() => {
+                    video.style.display = 'block';
+                    video.play();
+                }, 500);
+            });
+            juego.addEventListener('mouseleave', () => {
+                video.style.display = 'none';
+                video.pause();
+            });
+        });
     </script>
 </html>
