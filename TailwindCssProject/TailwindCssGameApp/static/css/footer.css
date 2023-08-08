@@ -2,7 +2,7 @@
     position: relative;
     bottom: 0;
     height: 100%;
-    width: 60%;
+    width: 65%;
 }
 #rightsFooter{
     position: absolute;
@@ -24,7 +24,6 @@
     width: 100%;
     height: calc(100% - 85px);
     flex-direction: row;
-    gap: 10px;
 }
 .iconFooterContent{
     display: flex;
@@ -35,12 +34,12 @@
     width: 100%;
     height: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 .footerIconImg img, .footerStarIcon img{
-    width: 80%;
-    height: 40%;
+    width: 60%;
+    height: 35%;
 }
 .buttonsFooter{
     display: flex;
@@ -68,4 +67,35 @@
 }
 .contentFooterButtons button:hover{
     color: #ff5400;
+}
+
+.socialNetContent{
+    display: flex;
+    width: 45%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.iconsSocialNet{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.discordButton{
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    margin-top: 40px;
+    cursor: pointer;
+    border: none;
+    transition: .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+}
+.discordButton:hover{
+    transform: scale(1.1);
 }
